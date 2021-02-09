@@ -1,7 +1,5 @@
 <x-guest-layout>
-
-    <h2>Login</h2>
-
+    <h2>Forgot password</h2>
 
     @if ($errors->any())
         <div>
@@ -14,12 +12,20 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('login') }}">
+    @if (session('status'))
+        <div>
+            {{ session('status') }}
+        </div>
+    @endif
+
+    <form action="/reset-password" method="POST">
         @csrf
+
+        <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
         <div>
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" value="{{ old('email') }}" autofocus>
+            <input type="email" id="email" name="email" value="{{ old('email', $request->email) }}" autofocus>
         </div>
 
         <div>
@@ -28,18 +34,14 @@
         </div>
 
         <div>
-            <label for="remember">
-                <input type="checkbox" name="remember" id="remember">
-                <span class="">Remember Me</span>
-            </label>
+            <label for="password_confirmation">Password Confirmation</label>
+            <input type="password" id="password_confirmation" name="password_confirmation">
         </div>
 
         <div>
-            <button>Login</button>
+            <button>Reset Password</button>
         </div>
 
     </form>
-
-    <a href="{{ route('password.request') }}">Forgot Password</a>
 
 </x-guest-layout>
