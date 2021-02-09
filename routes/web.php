@@ -28,14 +28,14 @@ Route::post('/register', [RegisterController::class, 'store'])
             ->middleware('guest')
             ->name('register');
 
-Route::get('/login', [LoginController::class, 'create'])
+Route::get('/login', [LoginController::class, 'login'])
             ->middleware('guest')
             ->name('login');
 
-Route::post('/login', [LoginController::class, 'store'])
+Route::post('/login', [LoginController::class, 'authenticate'])
             ->middleware('guest');
 
-Route::post('/logout', [LoginController::class, 'destroy'])
+Route::post('/logout', [LoginController::class, 'logout'])
             ->middleware('auth')
             ->name('logout');
 
