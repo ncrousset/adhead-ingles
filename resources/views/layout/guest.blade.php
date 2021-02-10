@@ -20,7 +20,8 @@
 </head>
 
 <body>
-    <div id="app" class="flex w-full">
+    <div id="app">
+        <app-header></app-header>
         {{ $slot }}
     </div>
 </body>

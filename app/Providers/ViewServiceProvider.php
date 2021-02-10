@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\View\Components\AppLayout;
 use App\View\Components\GuestLayout;
+use App\View\Components\AppHeader;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -28,5 +29,7 @@ class ViewServiceProvider extends ServiceProvider
     {
         View::composer('guest-layout', GuestLayout::class);
         View::composer('app-layout', AppLayout::class);
+        View::composer('app-header', AppHeader::class);
+    
     }
 }

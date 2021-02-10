@@ -1,12 +1,13 @@
 <x-guest-layout>
 
     <!-- component -->
-    <div class="flex items-center w-full min-h-screen p-4 lg:justify-center">
-        <div class="flex flex-col overflow-hidden bg-white shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
+    <div class="flex items-center w-full mt-5 md:mt-20 p-4 lg:justify-center">
+
+        <div
+            class="flex flex-col w-full overflow-hidden bg-white max md:shadow-lg md:flex-row md:flex-1 lg:max-w-screen-md">
 
             <div
                 class="text-white bg-login-img bg-cover md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
-                {{-- <img class="object-cover h-48 w-full" src="/img/login.jpg" alt="Login "> --}}
             </div>
 
 
@@ -47,7 +48,7 @@
                         <label for="remember" class="text-sm font-semibold text-gray-500">Remember me</label>
                     </div>
                     <div>
-                        <button type="submit"
+                        <button ty
                             class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-primary rounded-md shadow hover:bg-primary-dark focus:outline-none focus:ring-blue-200 focus:ring-4">
                             Log in
                         </button>
