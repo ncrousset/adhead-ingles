@@ -7,7 +7,8 @@
             class="flex flex-col w-full overflow-hidden bg-white max md:shadow-lg md:flex-row md:flex-1 lg:max-w-screen-md">
 
             <div
-                class="text-white bg-login-img bg-cover md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
+                class="text-white bg-blue-300 bg-login-img-a bg-left bg-cover md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
+
             </div>
 
 

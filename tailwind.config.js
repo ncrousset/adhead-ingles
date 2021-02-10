@@ -14,8 +14,17 @@ module.exports = {
         third: '#e34155',
       },
       backgroundImage: theme => ({
-        'login-img': "url('/img/login.jpg')",
-       })
+        'login-img': "url('/svg/bglogin.svg')",
+        'login-img-a': "url('/svg/bglogina.svg')",
+        'svg-discos': "url('/svg/discos.svg')",
+       }),
+       backgroundSize: {
+         'auto': 'auto',
+         'cover': 'cover',
+         'contain': 'contain',
+         '200%': '200%',
+         '16': '4rem',
+       }
     },
   },
   variants: {

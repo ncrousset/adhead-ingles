@@ -20,7 +20,6 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "alpinejs": "^2.8.0",
         "vue": "^2.6.12"
     }
 }

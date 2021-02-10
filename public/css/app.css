@@ -4350,7 +4350,15 @@ video {
 }
 
 .bg-login-img {
-  background-image: url('/img/login.jpg');
+  background-image: url('/svg/bglogin.svg');
+}
+
+.bg-login-img-a {
+  background-image: url('/svg/bglogina.svg');
+}
+
+.bg-svg-discos {
+  background-image: url('/svg/discos.svg');
 }
 
 .from-transparent {
@@ -8145,6 +8153,10 @@ video {
   background-repeat: space;
 }
 
+.bg-16 {
+  background-size: 4rem;
+}
+
 .bg-auto {
   background-size: auto;
 }
@@ -8155,6 +8167,10 @@ video {
 
 .bg-contain {
   background-size: contain;
+}
+
+.bg-200\% {
+  background-size: 200%;
 }
 
 .border-collapse {
@@ -35684,7 +35700,15 @@ video {
   }
 
   .sm\:bg-login-img {
-    background-image: url('/img/login.jpg');
+    background-image: url('/svg/bglogin.svg');
+  }
+
+  .sm\:bg-login-img-a {
+    background-image: url('/svg/bglogina.svg');
+  }
+
+  .sm\:bg-svg-discos {
+    background-image: url('/svg/discos.svg');
   }
 
   .sm\:from-transparent {
@@ -39479,6 +39503,10 @@ video {
     background-repeat: space;
   }
 
+  .sm\:bg-16 {
+    background-size: 4rem;
+  }
+
   .sm\:bg-auto {
     background-size: auto;
   }
@@ -39489,6 +39517,10 @@ video {
 
   .sm\:bg-contain {
     background-size: contain;
+  }
+
+  .sm\:bg-200\% {
+    background-size: 200%;
   }
 
   .sm\:border-collapse {
@@ -66940,7 +66972,15 @@ video {
   }
 
   .md\:bg-login-img {
-    background-image: url('/img/login.jpg');
+    background-image: url('/svg/bglogin.svg');
+  }
+
+  .md\:bg-login-img-a {
+    background-image: url('/svg/bglogina.svg');
+  }
+
+  .md\:bg-svg-discos {
+    background-image: url('/svg/discos.svg');
   }
 
   .md\:from-transparent {
@@ -70735,6 +70775,10 @@ video {
     background-repeat: space;
   }
 
+  .md\:bg-16 {
+    background-size: 4rem;
+  }
+
   .md\:bg-auto {
     background-size: auto;
   }
@@ -70745,6 +70789,10 @@ video {
 
   .md\:bg-contain {
     background-size: contain;
+  }
+
+  .md\:bg-200\% {
+    background-size: 200%;
   }
 
   .md\:border-collapse {
@@ -98196,7 +98244,15 @@ video {
   }
 
   .lg\:bg-login-img {
-    background-image: url('/img/login.jpg');
+    background-image: url('/svg/bglogin.svg');
+  }
+
+  .lg\:bg-login-img-a {
+    background-image: url('/svg/bglogina.svg');
+  }
+
+  .lg\:bg-svg-discos {
+    background-image: url('/svg/discos.svg');
   }
 
   .lg\:from-transparent {
@@ -101991,6 +102047,10 @@ video {
     background-repeat: space;
   }
 
+  .lg\:bg-16 {
+    background-size: 4rem;
+  }
+
   .lg\:bg-auto {
     background-size: auto;
   }
@@ -102001,6 +102061,10 @@ video {
 
   .lg\:bg-contain {
     background-size: contain;
+  }
+
+  .lg\:bg-200\% {
+    background-size: 200%;
   }
 
   .lg\:border-collapse {
@@ -129452,7 +129516,15 @@ video {
   }
 
   .xl\:bg-login-img {
-    background-image: url('/img/login.jpg');
+    background-image: url('/svg/bglogin.svg');
+  }
+
+  .xl\:bg-login-img-a {
+    background-image: url('/svg/bglogina.svg');
+  }
+
+  .xl\:bg-svg-discos {
+    background-image: url('/svg/discos.svg');
   }
 
   .xl\:from-transparent {
@@ -133247,6 +133319,10 @@ video {
     background-repeat: space;
   }
 
+  .xl\:bg-16 {
+    background-size: 4rem;
+  }
+
   .xl\:bg-auto {
     background-size: auto;
   }
@@ -133257,6 +133333,10 @@ video {
 
   .xl\:bg-contain {
     background-size: contain;
+  }
+
+  .xl\:bg-200\% {
+    background-size: 200%;
   }
 
   .xl\:border-collapse {
@@ -160708,7 +160788,15 @@ video {
   }
 
   .\32xl\:bg-login-img {
-    background-image: url('/img/login.jpg');
+    background-image: url('/svg/bglogin.svg');
+  }
+
+  .\32xl\:bg-login-img-a {
+    background-image: url('/svg/bglogina.svg');
+  }
+
+  .\32xl\:bg-svg-discos {
+    background-image: url('/svg/discos.svg');
   }
 
   .\32xl\:from-transparent {
@@ -164503,6 +164591,10 @@ video {
     background-repeat: space;
   }
 
+  .\32xl\:bg-16 {
+    background-size: 4rem;
+  }
+
   .\32xl\:bg-auto {
     background-size: auto;
   }
@@ -164513,6 +164605,10 @@ video {
 
   .\32xl\:bg-contain {
     background-size: contain;
+  }
+
+  .\32xl\:bg-200\% {
+    background-size: 200%;
   }
 
   .\32xl\:border-collapse {

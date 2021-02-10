@@ -1895,15 +1895,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    uri: String
+  },
   data: function data() {
     return {
-      open: true
+      open: false
     };
   },
   methods: {
     doOpen: function doOpen() {
       this.open = !this.open;
+    },
+    menuFocus: function menuFocus(node) {
+      return node == this.uri.substring(1) ? true : false;
     }
   }
 });
@@ -19447,7 +19462,13 @@ var render = function() {
               "button",
               {
                 staticClass:
-                  "md:hidden rounded-lg focus:outline-none focus:shadow-outline"
+                  "md:hidden rounded-lg focus:outline-none focus:shadow-outline",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.doOpen($event)
+                  }
+                }
               },
               [
                 _c(
@@ -19457,17 +19478,11 @@ var render = function() {
                     attrs: { fill: "currentColor", viewBox: "0 0 20 20" }
                   },
                   [
-                    _vm.open
+                    !_vm.open
                       ? _c("path", {
                           attrs: {
                             d:
                               "M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                          },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.doOpen($event)
-                            }
                           }
                         })
                       : _c("path", {
@@ -19476,12 +19491,6 @@ var render = function() {
                             d:
                               "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
                             "clip-rule": "evenodd"
-                          },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.doOpen($event)
-                            }
                           }
                         })
                   ]
@@ -19491,46 +19500,50 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _vm._m(0)
+        _c(
+          "nav",
+          {
+            staticClass:
+              "flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row",
+            class: { flex: _vm.open, hidden: !_vm.open }
+          },
+          [
+            _c(
+              "a",
+              {
+                staticClass:
+                  "px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline",
+                class: {
+                  "md:border-b-4 md:border-white bg-primary-dark": _vm.menuFocus(
+                    "login"
+                  )
+                },
+                attrs: { href: "/login" }
+              },
+              [_vm._v("Login")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass:
+                  "px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 md:ml-4 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline",
+                class: {
+                  "md:border-b-4 md:border-white bg-primary-dark": _vm.menuFocus(
+                    "register"
+                  )
+                },
+                attrs: { href: "/register" }
+              },
+              [_vm._v("Register")]
+            )
+          ]
+        )
       ]
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "nav",
-      {
-        staticClass:
-          "hidden flex-col flex-grow pb-2 md:pb-0 md:flex md:justify-end md:flex-row"
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass:
-              "px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white border-b-4 border-white bg-primary-dark md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline",
-            attrs: { href: "#" }
-          },
-          [_vm._v("Login")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass:
-              "px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 md:ml-4 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline",
-            attrs: { href: "#" }
-          },
-          [_vm._v("Register")]
-        )
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

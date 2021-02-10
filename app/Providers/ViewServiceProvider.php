@@ -29,7 +29,5 @@ class ViewServiceProvider extends ServiceProvider
     {
         View::composer('guest-layout', GuestLayout::class);
         View::composer('app-layout', AppLayout::class);
-        View::composer('app-header', AppHeader::class);
-    
     }
 }
