@@ -1904,13 +1904,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    uri: String
+    uri: String,
+    layout: {
+      type: String,
+      "default": "guest"
+    }
   },
   data: function data() {
     return {
-      open: false
+      open: false,
+      csrf: document.head.querySelector('meta[name="csrf-token"]').content,
+      menu: [{
+        title: "login",
+        url: "/login",
+        layout: "guest"
+      }, {
+        title: "register",
+        url: "/register",
+        layout: "guest"
+      }, {
+        title: "dashboard",
+        url: "/dashboard",
+        layout: "app"
+      }]
     };
   },
   methods: {
@@ -1919,6 +1948,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     menuFocus: function menuFocus(node) {
       return node == this.uri.substring(1) ? true : false;
+    },
+    logout: function logout() {
+      this.closest("form").submit();
     }
   }
 });
@@ -19446,7 +19478,9 @@ var render = function() {
       [
         _c(
           "div",
-          { staticClass: "p-2 flex flex-row items-center justify-between" },
+          {
+            staticClass: "p-2 pl-0 flex flex-row items-center justify-between"
+          },
           [
             _c(
               "a",
@@ -19509,33 +19543,67 @@ var render = function() {
           },
           [
             _c(
-              "a",
-              {
-                staticClass:
-                  "px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline",
-                class: {
-                  "md:border-b-4 md:border-white bg-primary-dark": _vm.menuFocus(
-                    "login"
-                  )
-                },
-                attrs: { href: "/login" }
-              },
-              [_vm._v("Login")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 md:ml-4 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline",
-                class: {
-                  "md:border-b-4 md:border-white bg-primary-dark": _vm.menuFocus(
-                    "register"
-                  )
-                },
-                attrs: { href: "/register" }
-              },
-              [_vm._v("Register")]
+              "ul",
+              { staticClass: "flex" },
+              [
+                _vm._l(_vm.menu, function(node) {
+                  return node.layout == _vm.layout
+                    ? _c(
+                        "li",
+                        {
+                          staticClass:
+                            "px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline",
+                          class: {
+                            "md:border-b-4 md:border-white bg-primary-dark": _vm.menuFocus(
+                              node.title
+                            )
+                          },
+                          attrs: { href: node.url }
+                        },
+                        [
+                          _vm._v(
+                            "\n          " + _vm._s(node.title) + "\n        "
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                }),
+                _vm._v(" "),
+                _vm.layout == "app"
+                  ? _c(
+                      "li",
+                      {
+                        staticClass:
+                          "px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
+                      },
+                      [
+                        _c(
+                          "form",
+                          { attrs: { method: "POST", action: "/logout" } },
+                          [
+                            _c("input", {
+                              attrs: { type: "hidden", name: "_token" },
+                              domProps: { value: _vm.csrf }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href: "#",
+                                  onclick:
+                                    "event.preventDefault();\n                  this.closest('form').submit();"
+                                }
+                              },
+                              [_vm._v("Logout")]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  : _vm._e()
+              ],
+              2
             )
           ]
         )

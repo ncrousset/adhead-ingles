@@ -21,20 +21,13 @@
 
 <body>
 
-    <div>
-        <ul>
-            <li>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <a href="#" onclick="event.preventDefault();
-                    this.closest('form').submit();">Logout</a>
-                </form>
-            </li>
-        </ul>
-    </div>
+    <div id="app">
+        <app-header layout='app' uri={{ \Request::getRequestUri() }}></app-header>
 
-    <div class="container">
-        {{ $slot }}
+        <div class="w-full text-white bg-white md:items-center">
+            {{ $slot }}
+        </div>
+
     </div>
 </body>
 

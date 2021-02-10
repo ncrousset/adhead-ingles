@@ -21,7 +21,7 @@
 
 <body>
     <div id="app">
-        <app-header uri={{ \Request::getRequestUri() }}></app-header>
+        <app-header layout='guest' uri={{ \Request::getRequestUri() }}></app-header>
         {{ $slot }}
     </div>
 </body>

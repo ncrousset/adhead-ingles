@@ -3,7 +3,7 @@
     <div
       class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
     >
-      <div class="p-2 flex flex-row items-center justify-between">
+      <div class="p-2 pl-0 flex flex-row items-center justify-between">
         <a
           href="#"
           class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"
@@ -33,25 +33,36 @@
         :class="{ flex: open, hidden: !open }"
         class="flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row"
       >
-        <!-- md:border-b-4 md:border-white bg-primary-dark -->
-        <a
-          :class="{
-            'md:border-b-4 md:border-white bg-primary-dark': menuFocus('login'),
-          }"
-          class="px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
-          href="/login"
-          >Login</a
-        >
-        <a
-          class="px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 md:ml-4 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
-          :class="{
-            'md:border-b-4 md:border-white bg-primary-dark': menuFocus(
-              'register'
-            ),
-          }"
-          href="/register"
-          >Register</a
-        >
+        <ul class="flex">
+          <li
+            v-for="node in menu"
+            v-if="node.layout == layout"
+            :class="{
+              'md:border-b-4 md:border-white bg-primary-dark': menuFocus(
+                node.title
+              ),
+            }"
+            class="px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
+            :href="node.url"
+          >
+            {{ node.title }}
+          </li>
+
+          <li
+            v-if="layout == 'app'"
+            class="px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
+          >
+            <form method="POST" action="/logout">
+              <input type="hidden" name="_token" :value="csrf" />
+              <a
+                href="#"
+                onclick="event.preventDefault();
+                    this.closest('form').submit();"
+                >Logout</a
+              >
+            </form>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -61,11 +72,21 @@
 export default {
   props: {
     uri: String,
+    layout: {
+      type: String,
+      default: "guest",
+    },
   },
 
   data() {
     return {
       open: false,
+      csrf: document.head.querySelector('meta[name="csrf-token"]').content,
+      menu: [
+        { title: "login", url: "/login", layout: "guest" },
+        { title: "register", url: "/register", layout: "guest" },
+        { title: "dashboard", url: "/dashboard", layout: "app" },
+      ],
     };
   },
 
@@ -76,6 +97,10 @@ export default {
 
     menuFocus(node) {
       return node == this.uri.substring(1) ? true : false;
+    },
+
+    logout() {
+      this.closest("form").submit();
     },
   },
 };

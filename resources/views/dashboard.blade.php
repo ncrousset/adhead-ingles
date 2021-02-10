@@ -1,4 +1,8 @@
 <x-app-layout>
-    <h1 class="bg-blue-500">Dashboard</h1>
+
+    <div class="flex flex-col max-w-screen-xl px-8 mx-auto">
+        <h1 class="bg-gray-200">Dashboard</h1>
+    </div>
+
 
 </x-app-layout>
