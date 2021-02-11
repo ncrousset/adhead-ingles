@@ -31,21 +31,22 @@
 
       <nav
         :class="{ flex: open, hidden: !open }"
-        class="flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row"
+        class="flex-grow pb-4 flex-grow md:pb-0 md:flex md:justify-end md:flex-row"
       >
-        <ul class="flex">
-          <li
-            v-for="node in menu"
-            v-if="node.layout == layout"
-            :class="{
-              'md:border-b-4 md:border-white bg-primary-dark': menuFocus(
-                node.title
-              ),
-            }"
-            class="px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
-            :href="node.url"
-          >
-            {{ node.title }}
+        <ul class="flex flex-col w-full md:w-auto md:flex-row">
+          <li v-for="node in menu" class="w-full">
+            <a
+              v-if="node.layout == layout"
+              :class="{
+                'md:border-b-4 md:border-white bg-primary-dark': menuFocus(
+                  node.title
+                ),
+              }"
+              class="px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 w-full hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
+              :href="node.url"
+            >
+              {{ node.title }}
+            </a>
           </li>
 
           <li
