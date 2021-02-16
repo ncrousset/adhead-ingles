@@ -1916,6 +1916,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     uri: String,
@@ -19548,30 +19551,37 @@ var render = function() {
               { staticClass: "flex flex-col w-full md:w-auto md:flex-row" },
               [
                 _vm._l(_vm.menu, function(node) {
-                  return _c("li", { staticClass: "w-full" }, [
-                    node.layout == _vm.layout
-                      ? _c(
-                          "a",
-                          {
-                            staticClass:
-                              "px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 w-full hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline",
-                            class: {
-                              "md:border-b-4 md:border-white bg-primary-dark": _vm.menuFocus(
-                                node.title
-                              )
-                            },
-                            attrs: { href: node.url }
-                          },
-                          [
-                            _vm._v(
-                              "\n            " +
-                                _vm._s(node.title) +
-                                "\n          "
+                  return node.layout == _vm.layout
+                    ? _c(
+                        "li",
+                        {
+                          staticClass:
+                            "w-full px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white capitalize md:mt-0 w-full hover:bg-primary-dark",
+                          class: {
+                            "md:border-b-4 md:border-white bg-primary-dark": _vm.menuFocus(
+                              node.title
                             )
-                          ]
-                        )
-                      : _vm._e()
-                  ])
+                          }
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                " focus:bg-primary-dark focus:outline-none focus:shadow-outline",
+                              attrs: { href: node.url }
+                            },
+                            [
+                              _vm._v(
+                                "\n            " +
+                                  _vm._s(node.title) +
+                                  "\n          "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e()
                 }),
                 _vm._v(" "),
                 _vm.layout == "app"
@@ -19579,7 +19589,7 @@ var render = function() {
                       "li",
                       {
                         staticClass:
-                          "px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
+                          "px-4 py-2 pt-3 mt-2 text-sm font-semibold capitalize text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
                       },
                       [
                         _c(

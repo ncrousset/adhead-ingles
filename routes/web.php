@@ -22,41 +22,21 @@ Route::get('/', function () {
 });
 
 
-Route::get('/register', [RegisterController::class, 'create'])
-            ->middleware('guest')
-            ->name('register');
+Route::middleware(['guest'])->group(function() {
+    Route::get('/register', [RegisterController::class, 'create'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store'])->name('register');
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::post('/register', [RegisterController::class, 'store'])
-            ->middleware('guest')
-            ->name('register');
-
-Route::get('/login', [LoginController::class, 'login'])
-            ->middleware('guest')
-            ->name('login');
-
-Route::post('/login', [LoginController::class, 'authenticate'])
-            ->middleware('guest');
+    Route::get('/forgot-password', [ForgotPasswordController::class, 'create'])->name('password.request');
+    Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->name('password.email');
+    Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])->name('password.reset');
+    Route::post('/reset-password', [ResetPasswordController::class, 'store']);  
+});
 
 Route::post('/logout', [LoginController::class, 'logout'])
             ->middleware('auth')
             ->name('logout');
-
-Route::get('/forgot-password', [ForgotPasswordController::class, 'create'])
-            ->middleware('guest')
-            ->name('password.request');
-
-Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])
-            ->middleware('guest')
-            ->name('password.email');
-
-Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])
-            ->middleware('guest')
-            ->name('password.reset');
-
-Route::post('/reset-password', [ResetPasswordController::class, 'store'])
-            ->middleware('guest');
-
-
 
 Route::get('/dashboard', function() {
     return view('dashboard');

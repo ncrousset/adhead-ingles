@@ -34,15 +34,18 @@
         class="flex-grow pb-4 flex-grow md:pb-0 md:flex md:justify-end md:flex-row"
       >
         <ul class="flex flex-col w-full md:w-auto md:flex-row">
-          <li v-for="node in menu" class="w-full">
+          <li
+            v-for="node in menu"
+            v-if="node.layout == layout"
+            class="w-full px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white capitalize md:mt-0 w-full hover:bg-primary-dark"
+            :class="{
+              'md:border-b-4 md:border-white bg-primary-dark': menuFocus(
+                node.title
+              ),
+            }"
+          >
             <a
-              v-if="node.layout == layout"
-              :class="{
-                'md:border-b-4 md:border-white bg-primary-dark': menuFocus(
-                  node.title
-                ),
-              }"
-              class="px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 w-full hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
+              class=" focus:bg-primary-dark focus:outline-none focus:shadow-outline"
               :href="node.url"
             >
               {{ node.title }}
@@ -51,7 +54,7 @@
 
           <li
             v-if="layout == 'app'"
-            class="px-4 py-2 pt-3 mt-2 text-sm font-semibold text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
+            class="px-4 py-2 pt-3 mt-2 text-sm font-semibold capitalize text-white md:mt-0 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:shadow-outline"
           >
             <form method="POST" action="/logout">
               <input type="hidden" name="_token" :value="csrf" />
