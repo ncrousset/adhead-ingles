@@ -44,7 +44,29 @@ class AuthTest extends DuskTestCase
                      ->type('email', 'rudys@gmail.com')
                      ->type('password', 'password12345')
                      ->press('button[type="submit"]')
-                     ->assertPathIs('/dashboard');
+                     ->assertPathIs('/dashboard')
+                     ->clickLink('Logout')
+                     ->assertPathIs('/');
          });
      }
+
+     /** @test */
+     public function a_user_can_reset_password_correctly()
+     {
+        User::create([
+              'name' => 'Rudys Acosta',
+              'email' => 'rudys@gmail.com',
+              'password' => Hash::make('password12345'),
+        ]);
+        
+    
+         $this->browse(function (Browser $browser) {
+             $browser->visit('/login')
+                     ->clickLink('Forgot Password?')
+                     ->type('email', 'rudys@gmail.com')
+                     ->press('button[type="submit"]')
+                     ->assertSee('We have emailed your password reset link!');
+         });
+     }
+
 }

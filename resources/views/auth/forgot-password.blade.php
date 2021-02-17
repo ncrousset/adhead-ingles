@@ -39,6 +39,7 @@
 
                     <div>
                         <button
+                        type="submit"
                             class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-primary rounded-md shadow hover:bg-primary-dark focus:outline-none focus:ring-blue-200 focus:ring-4">
                             Email Password Reset Link
                         </button>
