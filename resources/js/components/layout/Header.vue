@@ -59,6 +59,7 @@
             <form method="POST" action="/logout">
               <input type="hidden" name="_token" :value="csrf" />
               <a
+                id="logout"
                 href="#"
                 onclick="event.preventDefault();
                     this.closest('form').submit();"

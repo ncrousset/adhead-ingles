@@ -1919,6 +1919,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     uri: String,
@@ -19605,6 +19606,7 @@ var render = function() {
                               "a",
                               {
                                 attrs: {
+                                  id: "logout",
                                   href: "#",
                                   onclick:
                                     "event.preventDefault();\n                  this.closest('form').submit();"
