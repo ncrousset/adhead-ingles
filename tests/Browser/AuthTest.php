@@ -8,16 +8,20 @@ use Tests\DuskTestCase;
 
 class AuthTest extends DuskTestCase
 {
-    /**
-     * A Dusk test example.
-     *
-     * @return void
-     */
-    public function testExample()
+
+    use DatabaseMigrations;
+
+    /** @test */
+    public function a_user_can_register_correctly()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                    ->assertSee('Laravel');
+            $browser->visit('/register')
+                    ->type('name', 'Rudys Acosta')
+                    ->type('email', 'rudys@gmail.com')
+                    ->type('password', 'password12345')
+                    ->type('password_confirmation', 'password12345')
+                    ->press('button[type="submit"]')
+                    ->assertPathIs('/dashboard');
         });
     }
 }
