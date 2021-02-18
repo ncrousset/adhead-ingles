@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Models\Lyric;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -13,6 +14,13 @@ class VideoTest extends TestCase
 
     use RefreshDatabase;
 
+    /** @test */
+    public function a_video_has_a_lyric()
+    {
+        $video = Video::factory()->create();
+
+        $this->assertInstanceOf(Lyric::class, $video->lyric);
+    }
 
     /** @test */
     public function a_video_has_some_genders()

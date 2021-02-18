@@ -12,6 +12,14 @@ class Video extends Model
     protected $guarded = [];
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function lyric()
+    {
+        return $this->belongsTo(Lyric::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function genders()
