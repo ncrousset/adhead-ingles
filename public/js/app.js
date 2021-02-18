@@ -19686,13 +19686,14 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex flex-row" }, [
+  return _c("div", { staticClass: "flex flex-row -mb-80 h-screen" }, [
     _c(
       "div",
-      {},
+      { staticClass: "flex items-center justify-items-center pr-2 " },
       [
         _c("youtube", {
-          attrs: { "video-id": "Nj2U6rhnucI", "player-vars": { autoplay: 1 } }
+          staticClass: "-mt-32",
+          attrs: { "video-id": "Nj2U6rhnucI", "player-vars": { autoplay: 0 } }
         })
       ],
       1
@@ -19708,7 +19709,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: " text-gray-800 justify-start mr-0 text-lg pl-10" },
+      {
+        staticClass:
+          "border-1 border-gray-300 rounded-lg shadow-xl text-gray-800 justify-start mr-0 text-lg pl-10 h-4/5 overflow-y-auto py-5"
+      },
       [
         _c("p", { staticClass: "mb-3" }, [
           _vm._v(

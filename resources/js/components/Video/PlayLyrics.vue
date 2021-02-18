@@ -1,9 +1,9 @@
 <template>
-    <div class="flex flex-row">
-        <div class="">
-            <youtube video-id="Nj2U6rhnucI" :player-vars="{autoplay: 1}"></youtube>
+    <div class="flex flex-row -mb-80 h-screen">
+        <div class="flex items-center justify-items-center pr-2 ">
+            <youtube class="-mt-32" video-id="Nj2U6rhnucI" :player-vars="{autoplay: 0}"></youtube>
         </div>
-        <div class=" text-gray-800 justify-start mr-0 text-lg pl-10">
+        <div class="border-1 border-gray-300 rounded-lg shadow-xl text-gray-800 justify-start mr-0 text-lg pl-10 h-4/5 overflow-y-auto py-5">
             <p class="mb-3">
                 I've always been the one to say the first goodbye<br/>
                 Had to love and lose a hundred million times<br/>
