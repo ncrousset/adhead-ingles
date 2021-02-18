@@ -2,10 +2,17 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use App\Models\Singer;
+use App\Models\User;
+use App\Models\Video\Video;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
+
+    use RefreshDatabase;
+
     /**
      * A basic test example.
      *
@@ -13,6 +20,10 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
+        $user = Singer::factory()->create();
+
+        dd($user);
+
         $this->assertTrue(true);
     }
 }
