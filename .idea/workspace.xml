@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e60e0a86-6f2b-4d53-8fc6-00a0bdea2482" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Video/PlayLyrics.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Video/PlayLyrics.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_17_230154_create_videos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_17_230154_create_videos_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +193,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613601984958</updated>
-      <workItem from="1613601986010" duration="23004000" />
+      <workItem from="1613601986010" duration="25214000" />
     </task>
     <servers />
   </component>
@@ -217,10 +216,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613617621275" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1613621406893">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1613687457356">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1613621406893" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1613687457356" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1613607911804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -229,17 +228,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613682957492" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/app.js</url>
-          <line>14</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
