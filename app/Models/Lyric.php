@@ -27,6 +27,12 @@ class Lyric extends Model
         return $this->hasOne(Video::class);
     }
 
+    public function addExpression($expresion)
+    {
+
+        return $this->expressions()->create($expresion);
+    }
+
     /**
      * @return string
      */

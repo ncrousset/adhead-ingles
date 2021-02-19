@@ -29,4 +29,18 @@ class LyricTest extends TestCase
         $this->assertInstanceOf(Collection::class, $lyric->expressions);
     }
 
+    /** @test  */
+    public function user_can_add_a_expression()
+    {
+        $video = Video::factory()->create();
+        $lyric = $video->lyric;
+
+        $data = ['expression' => 'Expresion', 'paragraph' => 1, 'order' => 1];
+
+        $lyric->addExpression($data);
+
+        $this->assertEquals($data['expression'], $lyric->expressions->last()->expression);
+
+    }
+
 }

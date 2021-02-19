@@ -9,6 +9,8 @@ class Expression extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
