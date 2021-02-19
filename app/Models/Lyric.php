@@ -11,6 +11,9 @@ class Lyric extends Model
 
     protected $guarded = [];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function expressions()
     {
         return $this->hasMany(Expression::class);
