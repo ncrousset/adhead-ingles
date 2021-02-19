@@ -11,6 +11,11 @@ class Lyric extends Model
 
     protected $guarded = [];
 
+    public function expressions()
+    {
+        return $this->hasMany(Expression::class);
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

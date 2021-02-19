@@ -4,17 +4,16 @@ namespace Database\Factories;
 
 use App\Models\Expression;
 use App\Models\Lyric;
-use App\Models\Video;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class VideoFactory extends Factory
+class ExpressionFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Video::class;
+    protected $model = Expression::class;
 
     /**
      * Define the model's default state.
@@ -24,9 +23,10 @@ class VideoFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence,
-            'id_youtube' => 'NaTGwlfRB_c',
-            'lyric_id' => Lyric::factory()->has(Expression::factory()->count(2))
+            'lyric_id' => Lyric::factory(),
+            'expression' => $this->faker->sentence,
+            'paragraph' => 1,
+            'order' => 1
         ];
     }
 }
