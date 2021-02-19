@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Video\VideosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,12 +32,18 @@ Route::middleware(['guest'])->group(function() {
     Route::get('/forgot-password', [ForgotPasswordController::class, 'create'])->name('password.request');
     Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->name('password.email');
     Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])->name('password.reset');
-    Route::post('/reset-password', [ResetPasswordController::class, 'store']);  
+    Route::post('/reset-password', [ResetPasswordController::class, 'store']);
 });
 
-Route::post('/logout', [LoginController::class, 'logout'])
-            ->middleware('auth')
-            ->name('logout');
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/videos/create', [VideosController::class, 'create'])->name('videos.create');
+    Route::post('/videos', [VideosController::class, 'store'])->name('videos.store');
+
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+});
+
+
 
 Route::get('/dashboard', function() {
     return view('dashboard');
