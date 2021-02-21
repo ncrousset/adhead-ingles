@@ -22,7 +22,7 @@
 <body>
 
     <div id="app">
-        <app-header layout='app' uri={{ \Request::getRequestUri() }}></app-header>
+        <app-header layout="app" uri={{ \Request::getRequestUri() }}></app-header>
 
         <div class="w-full text-white bg-white md:items-center">
             {{ $slot }}

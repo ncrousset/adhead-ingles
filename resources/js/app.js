@@ -1,17 +1,22 @@
 require('./bootstrap');
+//require('alpinejs');
 
-// require('alpinejs');
+import { createApp } from 'vue'
+import AppHeader from "./components/layout/Header";
+// import VueYouTubeEmbed from 'vue-youtube-embed'
 
-// window.Vue = require('vue');
-import Vue from 'vue'
-import VueYouTubeEmbed from 'vue-youtube-embed'
 
-Vue.use(VueYouTubeEmbed)
+createApp({
+    components: {
+        AppHeader
+    }
+}).mount("#app")
 
-Vue.component('app-header', require('./components/layout/Header.vue').default);
-Vue.component('play-lyrics', require('./components/video/PlayLyrics').default);
-Vue.component('form-video', require('./components/forms/FormVideo').default);
+// Vue.use(VueYouTubeEmbed)
 
-const app = new Vue({
-    el: '#app',
-});
+// appVue.component(VueYouTubeEmbed)
+// appVue.component('app-header', Header)
+// appVue.component('play-lyrics',  require('./components/video/PlayLyrics'))
+// appVue.component('form-video', require('./components/forms/FormVideo'))
+
+// appVue.mount("#app")
