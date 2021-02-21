@@ -20,7 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e60e0a86-6f2b-4d53-8fc6-00a0bdea2482" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/components/forms/FormVideo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/forms/elements/Expression.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Video/PlayLyrics.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/video/PlayLyrics.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/videos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/videos/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +199,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613601984958</updated>
       <workItem from="1613601986010" duration="118044000" />
-      <workItem from="1613857288987" duration="1187000" />
+      <workItem from="1613857288987" duration="9148000" />
     </task>
     <servers />
   </component>
@@ -234,9 +239,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613607911804" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1613857944809">
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1613861933130">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613857944809" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613861933130" />
   </component>
 </project>
