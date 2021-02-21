@@ -23,6 +23,6 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.2",
-        "vue-youtube-embed": "^2.2.2"
+        "youtube-vue3": "^0.1.10"
     }
 }

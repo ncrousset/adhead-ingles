@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-row -mb-80 h-screen">
         <div class="flex items-center justify-items-center pr-2 ">
-<!--            <youtube class="-mt-32" video-id="Nj2U6rhnucI" :player-vars="{autoplay: 0}"></youtube>-->
+            <YoutubeVue3 ref="youtube" videoid="Tqm7-zN5s8k"/>
         </div>
         <div class="border-1 border-gray-300 rounded-lg shadow-xl text-gray-800 justify-start mr-0 text-lg pl-10 h-4/5 overflow-y-auto py-5">
             <p class="mb-3">
@@ -120,10 +120,13 @@
 
 <script>
 
+import { YoutubeVue3 } from 'youtube-vue3'
 
 export default {
+    components: {
+         YoutubeVue3
+    }
 
-name: "PlayLyrics"
 }
 </script>
 

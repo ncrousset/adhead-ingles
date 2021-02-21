@@ -23,13 +23,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/layout/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layout/Header.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/video/PlayLyrics.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/video/PlayLyrics.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/guest.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +202,7 @@
       <workItem from="1613601986010" duration="118044000" />
       <workItem from="1613857288987" duration="12221000" />
       <workItem from="1613875487985" duration="28000" />
-      <workItem from="1613930411413" duration="6541000" />
+      <workItem from="1613930411413" duration="9602000" />
     </task>
     <servers />
   </component>
@@ -248,9 +246,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613607911804" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1613934135680">
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1613942247742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613934135680" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613942247742" />
   </component>
 </project>

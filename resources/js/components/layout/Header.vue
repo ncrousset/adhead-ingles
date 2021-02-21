@@ -84,10 +84,8 @@ export default {
             return node == props.uri.substring(1) ? true : false
         }
 
-        const logout = () => this.closest("form").submit()
-
         return {
-            doOpen, menuFocus, logout, open, csrf, menu
+            doOpen, menuFocus, open, csrf, menu
         }
     },
 }
