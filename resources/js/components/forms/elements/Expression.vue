@@ -1,9 +1,25 @@
 <template>
     <div class="flex mt-3">
         <div class="flex justify-between w-full">
-            <input v-model="expression" type="text" name="" placeholder="Expression" class="border p-2 w-3/5 mr-2">
-            <input type="number" name="" placeholder="Pharagraph num." class="border p-2 w-1/5 ml-2">
-            <input type="number" name="" placeholder="Order num." class="border p-2 w-1/5 ml-2">
+            <input
+                type="text"
+                name=""
+                :value="expression"
+                @input="event => $emit('update:expression', event.target.value)"
+                placeholder="Expression"
+                class="border p-2 w-3/5 mr-2">
+            <input
+                :value="pharagraph"
+                @input="event => $emit('update:pharagraph', event.target.value)"
+                placeholder="Pharagraph num."
+                class="border p-2 w-1/5 ml-2">
+            <input
+                :value="order"
+                @input="event => $emit('update:expression', event.target.value)"
+                type="number"
+                name=""
+                placeholder="Order num."
+                class="border p-2 w-1/5 ml-2">
         </div>
         <div class="w-10 ml-2">
             <button class="inline-flex items-center justify-center w-10 h-10 mr-2 text-white transition-colors duration-150 bg-third rounded-lg focus:shadow-outline hover:bg-primary-dark focus:outline-none">
@@ -14,21 +30,16 @@
 </template>
 
 <script>
+
+
 export default {
-    model: {
-
-    },
-
     props: {
-        expression: {
-            type: String
-        }
+        expression: String,
+        pharagraph: Number,
+        order: Number
     },
+    setup(props) {
 
-    data() {
-        return {
-            test: ''
-        }
     }
 }
 </script>

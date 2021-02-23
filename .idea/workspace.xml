@@ -21,13 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e60e0a86-6f2b-4d53-8fc6-00a0bdea2482" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/layout/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layout/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/video/PlayLyrics.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/video/PlayLyrics.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/FormVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/FormVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/forms/elements/Expression.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/forms/elements/Expression.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +198,7 @@
       <workItem from="1613601986010" duration="118044000" />
       <workItem from="1613857288987" duration="12221000" />
       <workItem from="1613875487985" duration="28000" />
-      <workItem from="1613930411413" duration="9602000" />
+      <workItem from="1613930411413" duration="19503000" />
     </task>
     <servers />
   </component>
@@ -246,9 +242,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613607911804" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1613942247742">
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1613944386804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613942247742" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613944386804" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/components/forms/elements/Expression.vue</url>
+          <line>42</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

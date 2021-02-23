@@ -12,18 +12,12 @@
         <div class="flex flex-row justify-between items-center justify-items-center">
             <h2 class="text-lg text-gray-800 font-semibold my-3">Expressions</h2>
 
-            <a href="" class="font-semibold text-primary-dark hover:underline">Add Expression</a>
-
-            <button class="inline-flex items-center font-semibold justify-center px-2 h-6 mr-2 text-white transition-colors duration-150 bg-primary rounded-lg focus:shadow-outline hover:bg-primary-dark focus:outline-none">
-
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
-
-        </button>
+            <a href="#" class="font-semibold text-primary-dark hover:underline" @click="addExpresion">Add Expression</a>
         </div>
 
-        <expression v-model:title="expressions[0].expression"></expression>
+        <expression v-for="(expression, index) in expressions" v-model:expression="expression.expression"  :key="index"></expression>
 
-        <div class="flex justify-end ">
+        <div class="flex justify-end pb-10">
             <button class="m-0 inline-flex items-center font-semibold px-4 mt-5 justify-center  h-10 text-white transition-colors duration-150 bg-primary rounded-lg focus:shadow-outline hover:bg-primary-dark focus:outline-none">
                 Save
             </button>
@@ -33,21 +27,22 @@
 </template>
 
 <script>
-
 import Expression from './elements/Expression';
+import { ref, reactive } from 'vue'
 
 export default {
     components: {
         Expression
     },
 
-    data() {
+    setup() {
+        const expressions = reactive([{ expression: '', pharagraph: 0, order: 0}])
+
+        const addExpresion = () => expressions.push({ expression: '', pharagraph: 0, order: 0})
+
         return {
-            expressions: [{
-                expression: '',
-                pharagraph: 0,
-                order: 0
-            }]
+            expressions,
+            addExpresion
         }
     }
 }
