@@ -15,7 +15,7 @@
             <a href="#" class="font-semibold text-primary-dark hover:underline" @click="addExpresion">Add Expression</a>
         </div>
 
-        <expression v-for="(expression, index) in expressions" v-model:expression="expression.expression"  :key="index"></expression>
+        <expression v-for="(expression, index) in expressions" v-model:expression="expression.expression" @destroy="destroy" :key="index" :index="index"></expression>
 
         <div class="flex justify-end pb-10">
             <button class="m-0 inline-flex items-center font-semibold px-4 mt-5 justify-center  h-10 text-white transition-colors duration-150 bg-primary rounded-lg focus:shadow-outline hover:bg-primary-dark focus:outline-none">
@@ -35,12 +35,18 @@ export default {
         Expression
     },
 
+    computed: {
+
+    },
+
     setup() {
         const expressions = reactive([{ expression: '', pharagraph: 0, order: 0}])
 
-        const addExpresion = () => expressions.push({ expression: '', pharagraph: 0, order: 0})
+        const addExpresion = () => expressions.unshift({ expression: '', pharagraph: 0, order: 0})
+        const destroy = (index) => expressions.splice(index, 1)
 
         return {
+            destroy,
             expressions,
             addExpresion
         }

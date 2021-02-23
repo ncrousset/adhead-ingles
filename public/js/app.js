@@ -16292,6 +16292,7 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Expression: _elements_Expression__WEBPACK_IMPORTED_MODULE_0__.default
   },
+  computed: {},
   setup: function setup() {
     var expressions = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)([{
       expression: '',
@@ -16300,14 +16301,19 @@ __webpack_require__.r(__webpack_exports__);
     }]);
 
     var addExpresion = function addExpresion() {
-      return expressions.push({
+      return expressions.unshift({
         expression: '',
         pharagraph: 0,
         order: 0
       });
     };
 
+    var destroy = function destroy(index) {
+      return expressions.splice(index, 1);
+    };
+
     return {
+      destroy: destroy,
       expressions: expressions,
       addExpresion: addExpresion
     };
@@ -16327,11 +16333,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _FormVideo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../FormVideo */ "./resources/js/components/forms/FormVideo.vue");
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     expression: String,
     pharagraph: Number,
-    order: Number
+    order: Number,
+    index: Number
   },
   setup: function setup(props) {}
 });
@@ -16481,10 +16490,12 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
       "onUpdate:expression": function onUpdateExpression($event) {
         return expression.expression = $event;
       },
-      key: index
+      onDestroy: $setup.destroy,
+      key: index,
+      index: index
     }, null, 8
     /* PROPS */
-    , ["expression", "onUpdate:expression"]);
+    , ["expression", "onUpdate:expression", "onDestroy", "index"]);
   }), 128
   /* KEYED_FRAGMENT */
   )), _hoisted_7]);
@@ -16516,18 +16527,17 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   "class": "flex justify-between w-full"
 };
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_3 = {
   "class": "w-10 ml-2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-  "class": "inline-flex items-center justify-center w-10 h-10 mr-2 text-white transition-colors duration-150 bg-third rounded-lg focus:shadow-outline hover:bg-primary-dark focus:outline-none"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   "class": "w-6 h-6 fill-current",
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 352 512"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
   d: "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-})])])], -1
+})], -1
 /* HOISTED */
 );
 
@@ -16565,7 +16575,12 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     "class": "border p-2 w-1/5 ml-2"
   }, null, 40
   /* PROPS, HYDRATE_EVENTS */
-  , ["value"])]), _hoisted_3]);
+  , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[4] || (_cache[4] = function (event) {
+      return _ctx.$emit('destroy', $props.index);
+    }),
+    "class": "inline-flex items-center justify-center w-8 h-8 mr-2 text-white transition-colors duration-150 bg-third rounded-lg focus:shadow-outline       focus:outline-none"
+  }, [_hoisted_4])])]);
 });
 
 /***/ }),
