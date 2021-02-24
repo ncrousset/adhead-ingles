@@ -16285,7 +16285,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _elements_Expression__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements/Expression */ "./resources/js/components/forms/elements/Expression.vue");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _functions_SplitLyric__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../functions/SplitLyric */ "./resources/js/functions/SplitLyric.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -16294,11 +16296,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {},
   setup: function setup() {
-    var expressions = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)([{
+    var expressions = (0,vue__WEBPACK_IMPORTED_MODULE_2__.reactive)([{
       expression: '',
       pharagraph: 0,
       order: 0
     }]);
+    var lyric = (0,vue__WEBPACK_IMPORTED_MODULE_2__.ref)('');
 
     var addExpresion = function addExpresion() {
       return expressions.unshift({
@@ -16312,10 +16315,16 @@ __webpack_require__.r(__webpack_exports__);
       return expressions.splice(index, 1);
     };
 
+    var generateExpression = function generateExpression() {
+      console.log((0,_functions_SplitLyric__WEBPACK_IMPORTED_MODULE_1__.default)(lyric.value).lyricExpression);
+    };
+
     return {
-      destroy: destroy,
       expressions: expressions,
-      addExpresion: addExpresion
+      lyric: lyric,
+      addExpresion: addExpresion,
+      destroy: destroy,
+      generateExpression: generateExpression
     };
   }
 });
@@ -16453,8 +16462,31 @@ var _hoisted_1 = {
   action: ""
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex mt-3 justify-between\" data-v-03ca151c><input type=\"text\" name=\"\" placeholder=\"Title\" class=\"border p-2 w-2/3 mr-2\" data-v-03ca151c><input type=\"text\" name=\"\" placeholder=\"Youtube id\" class=\"border p-2 w-1/3 ml-2\" data-v-03ca151c></div><h2 class=\"text-lg text-gray-800 font-semibold my-3\" data-v-03ca151c>Lyric</h2><div data-v-03ca151c><textarea class=\"border w-full\" name=\"\" id=\"\" rows=\"10\" placeholder=\" Lyric\" data-v-03ca151c></textarea></div>", 3);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "flex mt-3 justify-between"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  type: "text",
+  name: "",
+  placeholder: "Title",
+  "class": "border p-2 w-2/3 mr-2"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  type: "text",
+  name: "",
+  placeholder: "Youtube id",
+  "class": "border p-2 w-1/3 ml-2"
+})], -1
+/* HOISTED */
+);
 
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", {
+  "class": "text-lg text-gray-800 font-semibold my-3"
+}, "Lyric", -1
+/* HOISTED */
+);
+
+var _hoisted_4 = {
+  "class": "flex justify-end pb-10"
+};
 var _hoisted_5 = {
   "class": "flex flex-row justify-between items-center justify-items-center"
 };
@@ -16478,10 +16510,26 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_expression = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("expression");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("form", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("form", _hoisted_1, [_hoisted_2, _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $setup.lyric = $event;
+    }),
+    "class": "border w-full p-5",
+    name: "",
+    id: "",
+    rows: "10",
+    placeholder: " Lyric"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.lyric]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $setup.generateExpression && $setup.generateExpression.apply($setup, arguments);
+    }),
+    "class": "m-0 inline-flex items-center font-semibold px-4 mt-5 justify-center  h-10 text-white transition-colors duration-150 bg-primary rounded-lg focus:shadow-outline hover:bg-primary-dark focus:outline-none"
+  }, " Generar ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: "#",
     "class": "font-semibold text-primary-dark hover:underline",
-    onClick: _cache[1] || (_cache[1] = function () {
+    onClick: _cache[3] || (_cache[3] = function () {
       return $setup.addExpresion && $setup.addExpresion.apply($setup, arguments);
     })
   }, "Add Expression")]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.expressions, function (expression, index) {
@@ -16793,6 +16841,43 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/functions/SplitLyric.js":
+/*!**********************************************!*\
+  !*** ./resources/js/functions/SplitLyric.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(lyric) {
+  var lyricExpression = [];
+
+  var getParagraphs = function getParagraphs(lyric) {
+    return lyric.split(/\n\n/);
+  };
+
+  var getLines = function getLines(paragraph) {
+    return paragraph.split(/\n/);
+  }; // Get all paragraphs with lyric
+
+
+  var paragraphs = getParagraphs(lyric);
+  paragraphs.forEach(function (paragraph) {
+    // delete the empty paragraph
+    if (paragraph.length > 0) {
+      lyricExpression.push(getLines(paragraph.trim()));
+    }
+  });
+  return {
+    lyricExpression: lyricExpression
+  };
+}
 
 /***/ }),
 

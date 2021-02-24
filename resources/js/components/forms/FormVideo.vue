@@ -6,7 +6,13 @@
         </div>
         <h2 class="text-lg text-gray-800 font-semibold my-3">Lyric</h2>
         <div>
-            <textarea class="border w-full" name="" id="" rows="10" placeholder=" Lyric"></textarea>
+            <textarea v-model="lyric" class="border w-full p-5" name="" id="" rows="10" placeholder=" Lyric"></textarea>
+        </div>
+
+        <div class="flex justify-end pb-10">
+            <button @click="generateExpression" class="m-0 inline-flex items-center font-semibold px-4 mt-5 justify-center  h-10 text-white transition-colors duration-150 bg-primary rounded-lg focus:shadow-outline hover:bg-primary-dark focus:outline-none">
+                Generar
+            </button>
         </div>
 
         <div class="flex flex-row justify-between items-center justify-items-center">
@@ -28,6 +34,7 @@
 
 <script>
 import Expression from './elements/Expression';
+import splitLyric from "../../functions/SplitLyric";
 import { ref, reactive } from 'vue'
 
 export default {
@@ -42,13 +49,21 @@ export default {
     setup() {
         const expressions = reactive([{ expression: '', pharagraph: 0, order: 0}])
 
+        const lyric = ref('')
+
         const addExpresion = () => expressions.unshift({ expression: '', pharagraph: 0, order: 0})
         const destroy = (index) => expressions.splice(index, 1)
 
+        const generateExpression = () => {
+            console.log(splitLyric(lyric.value).lyricExpression)
+        }
+
         return {
-            destroy,
             expressions,
-            addExpresion
+            lyric,
+            addExpresion,
+            destroy,
+            generateExpression,
         }
     }
 }
