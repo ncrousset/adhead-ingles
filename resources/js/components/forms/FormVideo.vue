@@ -10,7 +10,7 @@
         </div>
 
         <div class="flex justify-end pb-10">
-            <button @click="generateExpression" class="m-0 inline-flex items-center font-semibold px-4 mt-5 justify-center  h-10 text-white transition-colors duration-150 bg-primary rounded-lg focus:shadow-outline hover:bg-primary-dark focus:outline-none">
+            <button @click.prevent="generateExpression" class="m-0 inline-flex items-center font-semibold px-4 mt-5 justify-center  h-10 text-white transition-colors duration-150 bg-primary rounded-lg focus:shadow-outline hover:bg-primary-dark focus:outline-none">
                 Generar
             </button>
         </div>
@@ -21,7 +21,11 @@
             <a href="#" class="font-semibold text-primary-dark hover:underline" @click="addExpresion">Add Expression</a>
         </div>
 
-        <expression v-for="(expression, index) in expressions" v-model:expression="expression.expression" @destroy="destroy" :key="index" :index="index"></expression>
+        <expression v-for="(expression, index) in expressions"
+                    :expression="expression.expression"
+                    :pharagraph="expression.pharagraph"
+                    :order="expression.order"
+                    @destroy="destroy" :key="index" :index="index"></expression>
 
         <div class="flex justify-end pb-10">
             <button class="m-0 inline-flex items-center font-semibold px-4 mt-5 justify-center  h-10 text-white transition-colors duration-150 bg-primary rounded-lg focus:shadow-outline hover:bg-primary-dark focus:outline-none">
@@ -55,7 +59,11 @@ export default {
         const destroy = (index) => expressions.splice(index, 1)
 
         const generateExpression = () => {
-            console.log(splitLyric(lyric.value).lyricExpression)
+            destroy(0)
+            splitLyric(lyric.value).lyricExpression.forEach((paragraph, index) => {
+                paragraph.forEach((line, indexLine) => expressions.push({ expression: line, pharagraph: index, order: indexLine}))
+            })
+            // console.log(splitLyric(lyric.value).lyricExpression)
         }
 
         return {

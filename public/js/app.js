@@ -16316,7 +16316,16 @@ __webpack_require__.r(__webpack_exports__);
     };
 
     var generateExpression = function generateExpression() {
-      console.log((0,_functions_SplitLyric__WEBPACK_IMPORTED_MODULE_1__.default)(lyric.value).lyricExpression);
+      destroy(0);
+      (0,_functions_SplitLyric__WEBPACK_IMPORTED_MODULE_1__.default)(lyric.value).lyricExpression.forEach(function (paragraph, index) {
+        paragraph.forEach(function (line, indexLine) {
+          return expressions.push({
+            expression: line,
+            pharagraph: index,
+            order: indexLine
+          });
+        });
+      }); // console.log(splitLyric(lyric.value).lyricExpression)
     };
 
     return {
@@ -16522,9 +16531,9 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.lyric]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    onClick: _cache[2] || (_cache[2] = function () {
+    onClick: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $setup.generateExpression && $setup.generateExpression.apply($setup, arguments);
-    }),
+    }, ["prevent"])),
     "class": "m-0 inline-flex items-center font-semibold px-4 mt-5 justify-center  h-10 text-white transition-colors duration-150 bg-primary rounded-lg focus:shadow-outline hover:bg-primary-dark focus:outline-none"
   }, " Generar ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: "#",
@@ -16535,15 +16544,14 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   }, "Add Expression")]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.expressions, function (expression, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_expression, {
       expression: expression.expression,
-      "onUpdate:expression": function onUpdateExpression($event) {
-        return expression.expression = $event;
-      },
+      pharagraph: expression.pharagraph,
+      order: expression.order,
       onDestroy: $setup.destroy,
       key: index,
       index: index
     }, null, 8
     /* PROPS */
-    , ["expression", "onUpdate:expression", "onDestroy", "index"]);
+    , ["expression", "pharagraph", "order", "onDestroy", "index"]);
   }), 128
   /* KEYED_FRAGMENT */
   )), _hoisted_7]);
